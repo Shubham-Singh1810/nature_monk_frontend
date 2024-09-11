@@ -7,14 +7,15 @@ import HeroSection2 from "../components/HeroSection2"
 import BestSeller from "../components/BestSeller";
 function Home() {
   return (
-    <div>
-      <HeroSection />
-      <CounterSection />
-      <BestSeller/>
-      <ProductList />
-      <HeroSection2/>
-      <Testimonials />
-    </div>
+     <div>
+    <HeroSection />
+    <CounterSection />
+    <BestSeller/>
+    <ProductList />
+    <HeroSection2/>
+    <Testimonials />
+  </div> 
+    
   );
 }
 
