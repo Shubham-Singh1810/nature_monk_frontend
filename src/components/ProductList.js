@@ -66,15 +66,22 @@ function ProductList() {
               ></i>
             </div>
             <div className="row gy-5">
-              {isLoading
-                ? [1, 2, 3, 4, 5, 6]?.map((v, i) => {
-                    return (
-                      <ProductCardSkeleton/>
-                    );
-                  })
-                : productListArr
-                    // ?.filter((v) => v?.category === activeCat)
-                    .map((v, i) => <ProductCard key={i} v={v} />)}
+              {isLoading ? (
+                [1, 2, 3, 4, 5, 6]?.map((v, i) => {
+                  return <ProductCardSkeleton />;
+                })
+              ) : productListArr.length == 0 ? (
+                <div className="d-flex justify-content-center my-5">
+                  <div>
+                    <img src="https://cdn-icons-png.flaticon.com/256/6840/6840178.png" />
+                    <h5 className="text-center">No Item Found</h5>
+                  </div>
+                </div>
+              ) : (
+                productListArr
+                  // ?.filter((v) => v?.category === activeCat)
+                  .map((v, i) => <ProductCard key={i} v={v} />)
+              )}
             </div>
           </div>
         </div>

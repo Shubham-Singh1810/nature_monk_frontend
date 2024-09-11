@@ -53,8 +53,8 @@ function HeroSection() {
               ? Array.from({ length: slidesToShow }).map((_, i) => (
                   <div key={i} className="d-flex justify-content-center">
                     <div className="mx-3">
-                      <Skeleton height={120} width={120} style={{ borderRadius: '50%' }} />
-                      <Skeleton width={120} height={20} className="mt-2" />
+                      <Skeleton height={window.innerWidth < 500 ? 80:  120} width={window.innerWidth < 500 ? 80: 120} style={{ borderRadius: '50%' }} />
+                      <Skeleton width={window.innerWidth < 500 ? 80:  120} height={window.innerWidth < 500 ? 15:  20} className="mt-2" />
                     </div>
                   </div>
                 ))
