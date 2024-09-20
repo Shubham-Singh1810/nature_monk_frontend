@@ -103,7 +103,7 @@ function Navbar() {
             <h4 className="mb-0">
               <i className="fa fa-shopping-cart text-secondary ms-3 me-4  "></i>
             </h4>
-            <h4 className="mb-0">
+            <h4 className="mb-0" onClick={()=>navigate("/login")}>
               <i className="fa fa-user text-secondary"></i>
             </h4>
             

@@ -15,6 +15,7 @@ import BottomNavFooter from "./components/BottomNavFooter";
 import MyProfile from "./pages/MyProfile";
 import MyCart from "./pages/MyCart";
 import Notification from "./pages/Notification";
+import Login from "./pages/Login";
 function App() {
  
   return (
@@ -34,6 +35,7 @@ function App() {
           <Route path="/my-profile" element={<MyProfile />} />
           <Route path="/my-cart" element={<MyCart />} />
           <Route path="/notifications" element={<Notification />} />
+          <Route path="/login" element={<Login />} />
         </Routes>
         <Footer />
         <BottomNavFooter />
