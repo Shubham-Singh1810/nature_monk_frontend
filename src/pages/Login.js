@@ -3,10 +3,8 @@ import React from "react";
 function Login() {
   return (
     <div
-      className="row m-0 p-0 mt-md-5 bg-success"
-      style={{
-        background: "linear-gradient(135deg,  #198754, #F8F9FA)",
-      }}
+      className="row m-0 p-0 mt-md-5  loginBg"
+      
     >
       <div className="col-6 d-none d-md-flex  vh-100 row align-items-center justify-content-end m-0 p-0 ">
         <div
