@@ -27,7 +27,7 @@ function BottomNavFooter() {
     {
       icon: "fa fa-user",
       name: "Me",
-      link: "/my-profile",
+      link: "/login",
     },
   ];
   return (

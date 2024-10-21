@@ -1,5 +1,5 @@
 import React from "react";
-
+import {Link} from "react-router-dom"
 function Footer() {
   return (
     <footer id="footer" className="footer">
@@ -15,11 +15,7 @@ function Footer() {
               kanhan 441401
                 <br />
               </p>
-              {/* <p>
-                Residence : 5B/ 12 Ballygunge Circular Road ,<br />
-                Kolkata 700019
-                <br />
-              </p> */}
+              
             </div>
           </div>
           <div className="col-lg-3 col-md-6 footer-links d-flex">
@@ -80,15 +76,17 @@ function Footer() {
         </div>
       </div>
       <div className="container">
+        <Link>Terms And Condition</Link>
         <div className="copyright">
           © Copyright{" "}
           <strong>
-            <span>Avirose</span>
+            <span>Nature Monk Shop</span>
           </strong>
           . All Rights Reserved
         </div>
 
         <h6 className="text-center mt-1 mb-0"><a href="https://softtechgem.com/" target="_blank">Powered By Soft Tech Gem</a></h6>
+        
         
         <div className="credits" style={{visibility:"hidden"}}>
           {/* All the links in the footer should remain intact. */}

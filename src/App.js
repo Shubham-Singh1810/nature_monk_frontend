@@ -16,6 +16,8 @@ import MyProfile from "./pages/MyProfile";
 import MyCart from "./pages/MyCart";
 import Notification from "./pages/Notification";
 import Login from "./pages/Login";
+import Signup from "./pages/Signup";
+import Otp from "./pages/Otp";
 function App() {
  
   return (
@@ -36,6 +38,9 @@ function App() {
           <Route path="/my-cart" element={<MyCart />} />
           <Route path="/notifications" element={<Notification />} />
           <Route path="/login" element={<Login />} />
+          <Route path="/signup" element={<Signup />} />
+          <Route path="/otp" element={<Otp />} />
+          
         </Routes>
         <Footer />
         <BottomNavFooter />

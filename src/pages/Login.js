@@ -1,6 +1,7 @@
 import React from "react";
-
+import { useNavigate } from "react-router-dom";
 function Login() {
+  const navigate = useNavigate()
   return (
     <div
       className="row m-0 p-0 mt-md-5  loginBg"
@@ -23,6 +24,7 @@ function Login() {
                 Get access to your orders, <br /> cart list and so on
               </h4>
               <button
+              onClick={()=>navigate("/signup")}
                 className="btn btn-success w-100 mb-2 py-2"
                 style={{ borderRadius: "30px" }}
               >
@@ -45,7 +47,7 @@ function Login() {
               <b className="text-light"><i className="fa fa-lock"></i>  Password</b>
               <input className="form-control mt-2 mb-5" style={{background:"transparent",borderRadius:"none",outline:"none", borderTop:"none",borderRight:"none", borderLeft:"none", borderBottom:"2px solid white"}}/>
               <p className="text-light mb-4"><u>Forgot Password ?</u></p>
-              <button className="btn btn-light w-100 py-2" style={{borderRadius:"30px"}}>Login</button>
+              <button className="btn btn-light w-100 py-2" style={{borderRadius:"30px"}} >Login</button>
             </div>
           </div>
         </div>
