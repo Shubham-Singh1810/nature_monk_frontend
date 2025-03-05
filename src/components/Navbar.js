@@ -1,7 +1,9 @@
 import React, { useState } from "react";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import TopStrip from "./TopStrip";
+import { useGlobalState } from "../GlobalProvider";
 function Navbar() {
+  const { globalState, setGlobalState } = useGlobalState();
   const location = useLocation();
   const navigate = useNavigate();
   const [showMobNav, setShowMobNav] = useState(false);
@@ -11,7 +13,7 @@ function Navbar() {
       icon: "fa fa-home",
       path: "/",
     },
-    
+
     {
       name: "Products",
       icon: "fa fa-shopping-cart",
@@ -25,7 +27,14 @@ function Navbar() {
           name: "Ghee",
           path: "Ghee",
         },
-        
+        {
+          name: "Super Food",
+          path: "SuperFood",
+        },
+        {
+          name: "Dehydrated",
+          path: "Dehydrated",
+        },
       ],
     },
     {
@@ -92,21 +101,54 @@ function Navbar() {
               })}
             </ul>
           </nav>
-         
+
           <div className="d-md-flex d-none ms-2">
-            <h4 className="mb-0 text-secondary"  onClick={()=>navigate("/notifications")}>
-            <span style={{position:"relative", fontSize:"13px", left:"25px", top:"5px", padding:"0px 2px", background:"white", borderRadius:"50%"}}>9</span>
-          <i
-            className="fa fa-bell "
-          />
+            <h4 className="mb-0 text-secondary" onClick={() => navigate("/notifications")}>
+              <span
+                style={{
+                  position: "relative",
+                  fontSize: "13px",
+                  left: "25px",
+                  top: "5px",
+                  padding: "0px 2px",
+                  background: "white",
+                  borderRadius: "50%",
+                }}
+              >
+                9
+              </span>
+              <i className="fa fa-bell " />
             </h4>
-            <h4 className="mb-0">
-              <i className="fa fa-shopping-cart text-secondary ms-3 me-4  "></i>
+            <h4
+              className="mb-0 text-secondary me-3"
+              onClick={() => navigate(globalState?.user ? "/my-carts" : "/login")}
+            >
+              <span
+                style={{
+                  position: "relative",
+                  fontSize: "13px",
+                  left: "25px",
+                  top: "5px",
+                  padding: "0px 2px",
+                  background: "white",
+                  borderRadius: "50%",
+                }}
+              >
+                9
+              </span>
+              <i className="fa fa-shopping-cart " />
             </h4>
-            <h4 className="mb-0" onClick={()=>navigate("/login")}>
-              <i className="fa fa-user text-secondary"></i>
+
+            <h4 className="mb-0" onClick={() => navigate(globalState?.user ? "/my-profile" : "/login")}>
+              {globalState?.user?.profileImg ? (
+                <img
+                  src={globalState?.user?.profileImg}
+                  style={{ height: "30px", width: "30px", borderRadius: "50%" }}
+                />
+              ) : (
+                <i className="fa fa-user text-secondary"></i>
+              )}
             </h4>
-            
 
             {/* <i className="fa fa-user mx-4"></i>
           <i className="fa fa-shopping-cart"></i> */}
@@ -115,13 +157,22 @@ function Navbar() {
             className={"mobile-nav-toggle mobile-nav-show bi " + (!showMobNav ? " bi-list" : " bi-x")}
             onClick={() => setShowMobNav(!showMobNav)}
           /> */}
-          <h5 className="d-md-none d-block " style={{opacity:"0.9"}} onClick={()=>navigate("/notifications")}>
-            <span style={{position:"relative", fontSize:"13px", left:"25px", top:"5px", padding:"0px 2px", background:"white", borderRadius:"50%"}}>9</span>
-          <i
-            className="fa fa-bell "
-          />
+          <h5 className="d-md-none d-block " style={{ opacity: "0.9" }} onClick={() => navigate("/notifications")}>
+            <span
+              style={{
+                position: "relative",
+                fontSize: "13px",
+                left: "25px",
+                top: "5px",
+                padding: "0px 2px",
+                background: "white",
+                borderRadius: "50%",
+              }}
+            >
+              9
+            </span>
+            <i className="fa fa-bell " />
           </h5>
-         
         </div>
       </header>
       {showMobNav && (
@@ -135,7 +186,7 @@ function Navbar() {
                       <a className="text-secondary">
                         <span className="">
                           <i className={v?.icon + " me-2"}></i>
-                          {v?.name} 
+                          {v?.name}
                         </span>
                       </a>
                       <ul className="mt-3">

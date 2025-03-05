@@ -6,24 +6,13 @@ const GlobalStateContext = createContext();
 export const GlobalStateProvider = ({ children }) => {
   const [globalState, setGlobalState] = useState({
     user: null,
-    imageBaseUrl: "https://onclicksolution.com/avirosebackend/public/storage/",
-    cart_products:[],
-    productList:[]
+    token:null
   });
   useEffect(() => {
-    console.log(JSON.parse(localStorage.getItem("manish_design_user")))
-    setGlobalState({ ...globalState, user: JSON.parse(localStorage.getItem("manish_design_user"))});
-    // if(localStorage.getItem("manish_design_user")){
-    //   setGlobalState({ ...globalState, cart_products: JSON.parse(localStorage.getItem("manish_design_user")).cart_products});
-    // }
+    console.log(JSON.parse(localStorage.getItem("naturemonk_user")))
+    setGlobalState({ ...globalState, token:JSON.parse(localStorage.getItem("naturemonk_token")), user: JSON.parse(localStorage.getItem("naturemonk_user"))});
   }, []);
-  useEffect(() => {
-    
-    if(globalState.user){
-      setGlobalState({ ...globalState, cart_products: JSON.parse(localStorage.getItem("manish_design_user")).cart_products});
-    }
   
-  }, [globalState.user]);
   return <GlobalStateContext.Provider value={{ globalState, setGlobalState }}>{children}</GlobalStateContext.Provider>;
 };
 export const useGlobalState = () => {

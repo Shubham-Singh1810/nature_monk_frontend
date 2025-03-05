@@ -88,6 +88,8 @@ label {
     background: #198754;
   }
 }
-
+.fontMono {
+  font-family: monospace;
+}
 
 

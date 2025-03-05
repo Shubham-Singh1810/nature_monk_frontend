@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import Slider from "react-slick";
-import { useParams } from "react-router-dom";
+import { useParams, Link } from "react-router-dom";
 import { getProductDetails } from "../services/product.service";
 function ProductDetailedPage() {
   const params = useParams();
@@ -112,9 +112,9 @@ function ProductDetailedPage() {
               </p>
 
               <div className="d-flex " data-aos="fade-up" data-aos-delay={200}>
-                <a href="https://wa.me/+918208334548" target="blank" className="btn-book-a-table">
+                <Link to={"/product-checkout/"+productDetails?._id} className="btn-book-a-table">
                   Buy Now
-                </a>
+                </Link>
                 <a href="https://wa.me/+918208334548" target="blank" className="btn-book-a-table bg-warning ms-3">
                   Add to cart
                 </a>

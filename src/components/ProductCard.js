@@ -1,6 +1,6 @@
 import React from "react";
 import { useGlobalState } from "../GlobalProvider";
-import { useNavigate } from "react-router-dom";
+import { useNavigate , Link} from "react-router-dom";
 function ProductCard({ v }) {
   const navigate = useNavigate();
   const { setGlobalState, globalState } = useGlobalState();
@@ -37,6 +37,10 @@ function ProductCard({ v }) {
                   </b>
                 </h6>
               <button className="btn btn-success btn-sm  me-2" style={{width:"33%"}}><b>ADD</b></button>
+              {/* <Link  className="btn-book-a-table">
+                                Buy Now
+                              </Link> */}
+              {/* <button className="btn btn-success btn-sm  me-2" style={{width:"33%"}}><b>ADDED</b></button> */}
             </div>
           </div>
         </div>

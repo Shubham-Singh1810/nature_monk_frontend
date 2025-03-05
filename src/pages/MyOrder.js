@@ -1,13 +1,13 @@
 import React from "react";
 import MyOrderList from "../components/MyOrderList";
-import MyAddToCart from "../components/MyAddToCart";
 
-function MyCart() {
+
+function MyOrder() {
   return (
     <div className="mt-4">
-      <MyAddToCart />
+      <MyOrderList/>
     </div>
   );
 }
 
-export default MyCart;
+export default MyOrder;

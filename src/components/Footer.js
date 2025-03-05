@@ -15,6 +15,7 @@ function Footer() {
               kanhan 441401
                 <br />
               </p>
+
               
             </div>
           </div>
@@ -44,20 +45,10 @@ function Footer() {
               </div>
               
             </div>
+            
           </div>
-          <div className="col-lg-3 col-md-6 footer-links d-flex">
-            <i className="bi bi-clock icon" />
-            <div>
-              <h4>Opening Hours</h4>
-              <p>
-                <strong>Mon-Sat : </strong> 10AM - 06PM
-                <br />
-                Sunday : Closed
-              </p>
-            </div>
-          </div>
-          <div className="col-lg-3 col-md-6 footer-links">
-            <h4>Follow Us</h4>
+          <div className="col-lg-3 col-md-6 footer-links ">
+          <h4>Follow Us</h4>
             <div className="social-links d-flex">
               <a href="https://www.instagram.com/avirose_in?igsh=MTdlamVtMmpucWVodg==" target="_blank" className="twitter">
                 <i className="bi bi-twitter" />
@@ -73,10 +64,26 @@ function Footer() {
               </a>
             </div>
           </div>
+          <div className="col-lg-3 col-md-6 footer-links">
+            
+            <h4 className="">Our Policy</h4>
+            <div>
+
+              <Link to="/shipping-policy" className="text-light"><u>Shipping Policy</u></Link>
+            </div>
+            <div>
+
+              <Link to="/terms-condition" className="text-light"><u>Terms & Condition</u></Link>
+            </div>
+            <div>
+
+              <Link to="/privacy-policy" className="text-light"><u>Privacy Policy</u></Link>
+            </div>
+          </div>
         </div>
       </div>
       <div className="container">
-        <Link>Terms And Condition</Link>
+       
         <div className="copyright">
           © Copyright{" "}
           <strong>

@@ -1,7 +1,6 @@
 import axios from 'axios';
 
 // Define your API base URL
-const BASE_URL = "https://onclicksolution.com/avirosebackend/public/api/";
 const API_BASE_URL = "https://servernaturemonk.vercel.app/";
 const user = JSON.parse(localStorage.getItem("manish_design_user"))
 const config = {
@@ -11,9 +10,9 @@ const config = {
     Authorization: `Bearer ${user?.access_token}`
   },
 };
-export const login = async (formData) => {
+export const loginServ = async (formData) => {
   try {
-    const response = await axios.post(BASE_URL+"login" , formData);
+    const response = await axios.post(API_BASE_URL+"user/login" , formData);
     return (response);
   } catch (error) {
     // Handle error (e.g., log or throw an error)
@@ -21,81 +20,9 @@ export const login = async (formData) => {
     throw error;
   }
 };
-
-export const signUp = async (formData) => {
+export const sendOtpServ = async (formData) => {
   try {
-    const response = await axios.post(API_BASE_URL+"user/sendOtp", formData);
-    return (response);
-  } catch (error) {
-    // Handle error (e.g., log or throw an error)
-    console.error('Error fetching data:', error);
-    throw error;
-  }
-};
-export const editProfile = async (formData) => {
-  try {
-    const response = await axios.post(BASE_URL+"edit-profile", formData, config);
-    return (response);
-  } catch (error) {
-    // Handle error (e.g., log or throw an error)
-    console.error('Error fetching data:', error);
-    throw error;
-  }
-};
-export const changePassword = async (formData) => {
-  try {
-    const response = await axios.post(BASE_URL+"update-password", formData, config);
-    return (response);
-  } catch (error) {
-    // Handle error (e.g., log or throw an error)
-    console.error('Error fetching data:', error);
-    throw error;
-  }
-};
-export const addContactQuery = async (formData) => {
-  try {
-    const response = await axios.post(BASE_URL+"store-query", formData);
-    return (response);
-  } catch (error) {
-    // Handle error (e.g., log or throw an error)
-    console.error('Error fetching data:', error);
-    throw error;
-  }
-};
-export const getAllQueryForAdmin = async () => {
-  try {
-    const response = await axios.get(BASE_URL+"query-list",  config);
-    return (response);
-  } catch (error) {
-    // Handle error (e.g., log or throw an error)
-    console.error('Error fetching data:', error);
-    throw error;
-  }
-};
-
-export const addOrderApi = async (formData) => {
-  try {
-    const response = await axios.post(BASE_URL+"order", formData, config);
-    return (response);
-  } catch (error) {
-    // Handle error (e.g., log or throw an error)
-    console.error('Error fetching data:', error);
-    throw error;
-  }
-};
-export const getOrderList = async () => {
-  try {
-    const response = await axios.get(BASE_URL+"user-orders",  config);
-    return (response);
-  } catch (error) {
-    // Handle error (e.g., log or throw an error)
-    console.error('Error fetching data:', error);
-    throw error;
-  }
-};
-export const getProductTypeCount = async () => {
-  try {
-    const response = await axios.get(BASE_URL+"product-type-count");
+    const response = await axios.post(API_BASE_URL+"user/sendOtp" , formData);
     return (response);
   } catch (error) {
     // Handle error (e.g., log or throw an error)

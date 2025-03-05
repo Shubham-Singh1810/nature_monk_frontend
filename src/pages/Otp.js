@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import {signUp} from "../services/user.service";
+// import {signUp} from "../services/user.service";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 function Otp() {
@@ -18,19 +18,19 @@ function Otp() {
     }
   };
   const handleSignUp = async () => {
-    try {
-        let response = await signUp(formData);
-        if(response?.data.message=="Otp has been sent to the given email address"){
-            toast.success(response?.data.message);
-            setTimeout(()=>{
-                navigate("/login");
-            }, 1200)
-        }else{
-            toast.warning(response?.data.message);
-        }
-    } catch (error) {
-        toast.error("Internal Server Error");
-    }
+    // try {
+    //     let response = await signUp(formData);
+    //     if(response?.data.message=="Otp has been sent to the given email address"){
+    //         toast.success(response?.data.message);
+    //         setTimeout(()=>{
+    //             navigate("/login");
+    //         }, 1200)
+    //     }else{
+    //         toast.warning(response?.data.message);
+    //     }
+    // } catch (error) {
+    //     toast.error("Internal Server Error");
+    // }
   };
   return (
     <div className="row m-0 p-0 mt-md-5  loginBg">

@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import {signUp} from "../services/user.service";
+import { sendOtpServ } from "../services/user.service";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 function Signup() {
@@ -13,23 +13,23 @@ function Signup() {
   const formValidation = () => {
     if (formData.password && formData.email && formData.fullName) {
       return true;
-    }else{
-        return false
+    } else {
+      return false;
     }
   };
   const handleSignUp = async () => {
     try {
-        let response = await signUp(formData);
-        if(response?.data.message=="Otp has been sent to the given email address"){
-            toast.success(response?.data.message);
-            setTimeout(()=>{
-                navigate("/otp");
-            }, 1200)
-        }else{
-            toast.warning(response?.data.message);
-        }
+      let response = await sendOtpServ(formData);
+      if (response?.data.message == "Otp has been sent to the given email address") {
+        toast.success(response?.data.message);
+        setTimeout(() => {
+          navigate("/otp");
+        }, 1200);
+      } else {
+        toast.warning(response?.data.message);
+      }
     } catch (error) {
-        toast.error("Internal Server Error");
+      toast.error("Internal Server Error");
     }
   };
   return (
@@ -119,7 +119,11 @@ function Signup() {
               <p className="text-light mb-4">
                 <u>Forgot Password ?</u>
               </p>
-              <button onClick={handleSignUp} className={"btn btn-light w-100 py-2 " + (formValidation() ? " ": " disabled" )} style={{ borderRadius: "30px" }}>
+              <button
+                onClick={handleSignUp}
+                className={"btn btn-light w-100 py-2 " + (formValidation() ? " " : " disabled")}
+                style={{ borderRadius: "30px" }}
+              >
                 Sign up
               </button>
             </div>

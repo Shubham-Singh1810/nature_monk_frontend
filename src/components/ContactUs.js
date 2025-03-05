@@ -1,7 +1,7 @@
 import React, {useState} from "react";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
-import { addContactQuery } from "../services/user.service";
+// import { addContactQuery } from "../services/user.service";
 import { useNavigate } from "react-router-dom";
 function ContactUs() {
   const navigate = useNavigate();
@@ -22,25 +22,25 @@ function ContactUs() {
 
   const handleSubmit = async(e) => {
     e.preventDefault();
-    try {
-      let response = await addContactQuery(formData);
-      if (response.data.message == "Your query submitted successfully!") {
-        toast.success("Your query submitted successfully!");
-        setTimeout(() => {
-          setFormData({
-            user_name: "",
-            contact: "",
-            subject: "",
-            query: "",
-          });
-          navigate("/");
-        }, 1500);
-      } else {
-        toast.error("Something went wrong");
-      }
-    } catch (error) {
-      toast.error("Internal Server Error");
-    }
+    // try {
+    //   let response = await addContactQuery(formData);
+    //   if (response.data.message == "Your query submitted successfully!") {
+    //     toast.success("Your query submitted successfully!");
+    //     setTimeout(() => {
+    //       setFormData({
+    //         user_name: "",
+    //         contact: "",
+    //         subject: "",
+    //         query: "",
+    //       });
+    //       navigate("/");
+    //     }, 1500);
+    //   } else {
+    //     toast.error("Something went wrong");
+    //   }
+    // } catch (error) {
+    //   toast.error("Internal Server Error");
+    // }
   };
   return (
     <section id="contact" className="contact">

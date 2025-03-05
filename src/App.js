@@ -16,8 +16,14 @@ import MyProfile from "./pages/MyProfile";
 import MyCart from "./pages/MyCart";
 import Notification from "./pages/Notification";
 import Login from "./pages/Login";
-import Signup from "./pages/Signup";
 import Otp from "./pages/Otp";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
+import ProductCheckOutPage from "./pages/ProductCheckOutPage";
+import ShippingPolicy from "./pages/ShippingPolicy";
+import TermsNCondition from "./pages/TermsNCondition";
+import PrivacyPolicy from "./pages/PrivacyPolicy";
+import MyOrder from "./pages/MyOrder";
 function App() {
  
   return (
@@ -34,17 +40,22 @@ function App() {
           <Route path="/gallery" element={<GalleryPage />} />
           <Route path="/contact-us" element={<ContactUsPage />} />
           <Route path="/product/:id" element={<ProductDetailedPage />} />
+          <Route path="/product-checkout/:id" element={<ProductCheckOutPage />} />
           <Route path="/my-profile" element={<MyProfile />} />
-          <Route path="/my-cart" element={<MyCart />} />
+          <Route path="/my-carts" element={<MyCart />} />
+          <Route path="/my-orders" element={<MyOrder />} />
           <Route path="/notifications" element={<Notification />} />
           <Route path="/login" element={<Login />} />
-          <Route path="/signup" element={<Signup />} />
+          {/* <Route path="/signup" element={<Signup />} /> */}
           <Route path="/otp" element={<Otp />} />
-          
+          <Route path="/shipping-policy" element={<ShippingPolicy />} />
+          <Route path="/terms-condition" element={<TermsNCondition />} />
+          <Route path="/privacy-policy" element={<PrivacyPolicy />} />
         </Routes>
         <Footer />
         <BottomNavFooter />
       </GlobalStateProvider>
+      <ToastContainer/>
     </>
   );
   return (
